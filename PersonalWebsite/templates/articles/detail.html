@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block Title %}
+    {{article.title}}
+{% endblock Title %}
+
+{% block SingleArticle %}
+    <h2>{{article.title}}</h2>
+    <img src= {{article.featured_image.url}}>
+    <p>{{article.body}}</p>
+    <p>Tags:
+    {% for tag in article.tags.all  %}
+        {{tag.name}}
+    {% endfor %}
+
+{% endblock SingleArticle %}

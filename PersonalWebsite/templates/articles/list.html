@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block Title %}
+    Articles
+{% endblock Title %}
+
+{% block ArticleList %}
+    {% for singleArticle in articles  %}
+       <li><a href= "{% url 'ArticleDetail' singleArticle.slug %}">{{singleArticle.title}}</a>
+    {% endfor %}
+{% endblock ArticleList %}
