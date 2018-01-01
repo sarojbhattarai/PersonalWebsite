@@ -1,5 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,\
+                            HttpResponseRedirect
 from articles.models import Article, Category
+from articles.forms import ArticleForm, CategoryForm
+from django.urls import reverse
+
 # Create your views here.
 
 
@@ -14,4 +18,34 @@ def article_detail(request, slug=None):
     article = get_object_or_404(Article, slug=slug)
     template_name = 'articles/detail.html'
     context = {'article': article}
+    return render(request, template_name, context)
+
+
+def add_article(request):
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('ArticleList', args=[]))
+    else:
+        form = ArticleForm()
+
+    template_name = 'articles/new.html'
+    context = {
+        'form':form,
+    }
+    return render(request, template_name, context)
+
+def add_category(request):
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('ArticleList', args =[]))
+    else:
+        form = CategoryForm()
+    template_name = 'articles/new_category.html'
+    context = {
+        'form':form,
+    }
     return render(request, template_name, context)
