@@ -6,4 +6,11 @@ class ArticleForm(ModelForm):
 
     class Meta:
         model = Article
-        fields = '__all__'
+        exclude = ('slug',)
+
+
+class CategoryForm(ModelForm):
+    class Meta:
+        model = Category
+        fields = ('title',)
+    
