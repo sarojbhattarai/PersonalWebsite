@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block Title %}
+    Update 
+{% endblock Title %}
+
+{% block UpdateArticle %}
+    <form method = "POST" action = '.' enctype="multipart/form-data">
+        {{form.as_p}}{% csrf_token %}
+        <button type = 'submit'>Update</button>
+    </form>
+{% endblock UpdateArticle %}

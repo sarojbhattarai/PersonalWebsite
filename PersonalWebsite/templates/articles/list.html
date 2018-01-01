@@ -5,6 +5,10 @@
 
 {% block ArticleList %}
     {% for singleArticle in articles  %}
-       <li><a href= "{% url 'ArticleDetail' singleArticle.slug %}">{{singleArticle.title}}</a>
+       <li><a href= "{% url 'ArticleDetail' singleArticle.slug %}">{{singleArticle.title}}</a></li>
     {% endfor %}
+
+    <a href= "{% url 'AddArticle' %}">Add Article</a>
+    <a href = "{% url 'AddCategory' %}">Add Category</a>
 {% endblock ArticleList %}
+
