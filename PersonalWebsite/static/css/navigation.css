@@ -1,0 +1,95 @@
+/* For the banner */
+#topnavbar {
+    margin: 0;
+    padding: 0px;
+    /* background-color: yellow; */
+}
+
+#topnavbar.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar{
+    background-color: white;
+}
+
+ul.navbar-nav{
+    width: 100%;
+    margin: 0px;
+}
+
+li.nav-item{
+    width: 100%;
+    border: 1px solid #babfb6;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+}
+
+
+nav#topnavbar{
+    border: 1px solid #babfb6;
+    border-right: none;
+    border-left: none;
+    height: auto;
+}
+
+#navbarResponsive{
+    border: 1px solid #babfb6;
+    border-top: none;
+    border-bottom: none;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+    line-height: 2rem;
+    font-size: 110%;
+    /* font-weight: bold; */
+    letter-spacing: 0.007px;
+    text-align: center;
+}
+
+
+li.nav-item:hover{
+    background-color: #ffb900;
+    font-weight: bold;
+    box-shadow: none;
+
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: inherit;
+}
+
+#activeMenu{
+    box-shadow: 0 -4px #ffb900;
+}
+
+.bg-dark {
+    background-color: white !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+form.navbar-form{
+    border-top: 0.5px solid #babfb6;
+    border-bottom: 2px solid #babfb6;
+    border: 0px;
+
+
+}
+
+#searchArea{
+}
+
+#search{
+    border-width: 2px;
+    border-radius: 0px;
+    /*outline: none !important;*/
+    box-shadow: none;
+}
