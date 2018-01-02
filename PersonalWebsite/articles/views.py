@@ -36,6 +36,23 @@ def add_article(request):
     }
     return render(request, template_name, context)
 
+def update_article(request, slug=None):
+    article = get_object_or_404(Article, slug=slug)
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, request.FILES, instance=article)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('ArticleDetail', kwargs={'slug':slug,}))
+    else:
+        form = ArticleForm(instance = article)
+
+    template_name = 'articles/update.html'
+    context = {
+        'form':form,
+    }
+    return render(request, template_name, context)
+
+
 def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
