@@ -1,0 +1,13 @@
+body {
+ 
+ font-family: 'Barlow', sans-serif;
+/*  background-color: ghostwhite; */
+
+
+
+}
+
+#banner.container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
