@@ -16,6 +16,7 @@ class Article(models.Model):
     time_read = models.IntegerField()
     body = models.TextField()
     category = models.ForeignKey('Category', on_delete = models.CASCADE)
+    is_featured = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
