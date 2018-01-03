@@ -3,14 +3,21 @@ from django.shortcuts import render, get_object_or_404,\
 from articles.models import Article, Category
 from articles.forms import ArticleForm, CategoryForm
 from django.urls import reverse
+import random
 
 # Create your views here.
 
 
 def article_list(request):
     articles = Article.objects.all()
+    featured_articles = articles.filter(is_featured=True)
+    front_featured_article = featured_articles[random.randint(0, len(featured_articles) - 1)]
     template_name = 'articles/list.html'
-    context = {"articles": articles}
+    context = {
+        "articles": articles,
+        "featured_articles":featured_articles,
+        "front_featured_article": front_featured_article
+    }
     return render(request, template_name, context)
 
 
