@@ -9,7 +9,7 @@ import random
 
 
 def article_list(request):
-    articles = Article.objects.all()
+    articles = Article.objects.all().order_by('-published_on')
     featured_articles = articles.filter(is_featured=True)
     front_featured_article = featured_articles[random.randint(0, len(featured_articles) - 1)]
     template_name = 'articles/list.html'
