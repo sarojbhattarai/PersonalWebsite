@@ -28,9 +28,39 @@
 
 
 {% block ArticleList %}
-    {% for singleArticle in articles  %}
-       <li><a href= "{% url 'ArticleDetail' singleArticle.slug %}">{{singleArticle.title}}</a></li>
-    {% endfor %}
+    <div class = "container" id = "articleSection">
+        <div class = "row">
+            {% for singleArticle in articles  %}
+                <div class = "col-lg-3 col-md-6 mb-4">
+                    <div class = "singleArticle" data-target = "blogpostBody">
+                        <a href= "{% url 'ArticleDetail' singleArticle.slug %}" class = "articleLink">
+                            <div class = "articleImage">
+                               <img src= {{singleArticle.featured_image.url}} class = "img-responsive">
+                            </div> <!-- articleImage -->
+
+                            <div class = "articleHeading">
+                                <h3>{{singleArticle.title}}</h3>
+                            </div> <!-- articleHeading -->
+
+                            <div class = "articleDetails">
+                                <div class = "eta">
+                                    {{singleArticle.time_read}} min read
+                                </div>
+
+                                <div class = "author">
+                                    <h4>Nischal Shrestha</h4>
+                                </div>
+
+                                <div class = "timeSince">
+                                    <h4>{{singleArticle.published_on|timesince}} ago</h4>
+                                </div>
+                            </div> <!-- articleDetails -->
+                        </a>
+                    </div> <!-- singleArticle -->
+                </div> <!-- col -->
+            {% endfor %}
+        </row>
+    </div> <!-- container -->
 
     <a href= "{% url 'AddArticle' %}">Add Article</a>
     <a href = "{% url 'AddCategory' %}">Add Category</a>
