@@ -7,6 +7,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   
     <link href = "{% static 'css/navigation.css' %}" rel = "stylesheet" type = "text/css">
+    <link href = "{% static 'css/article_list.css' %}" rel = "stylesheet" type = "text/css">
     <link href = "{% static 'css/featured_image_carousel.css' %}" rel = "stylesheet" type = "text/css">
    <link href = "{% static 'css/main.css' %}" rel = "stylesheet" type = "text/css">
 </head>
@@ -18,10 +19,8 @@
         </div> <!-- banner -->
 
  {% include "navigation.html" %}
-{% block FeaturedArticles %}
-    
-{% endblock FeaturedArticles %}
-
+    {% block FeaturedArticles %} {% endblock FeaturedArticles %}
+<div class = "seperator"><hr></div>
     {% block ArticleList %}    {% endblock ArticleList %}
 
     {% block SingleArticle %}   {% endblock SingleArticle %}
