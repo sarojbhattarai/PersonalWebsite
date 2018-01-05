@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block Title %}
+    Search
+{% endblock Title %}
+
+{% block SearchResult %}
+    <div class = "container" id = "searchResult">
+        <h4 id = "searchResultCount">{{articles.count}} result{{articles.count|pluralize}} found for "{{query}}"</h4>
+<hr>
+    {% for singleArticle in articles  %}
+            <div class = "row">
+                <div class = "col-md-6">
+                    <a href= "{% url 'ArticleDetail' singleArticle.slug %}" class = "articleLink">
+                        <div class = "articleImage">
+
+                        <img src= {{singleArticle.featured_image.url}} class = "img-responsive">
+                        </div> <!-- articleImage -->
+                    </a>
+                </div>
+
+                <div class = "col-md-6">
+                    <a href= "{% url 'ArticleDetail' singleArticle.slug %}" class = "articleLink">
+                        <div class = "articleHeading">
+                            <h3>{{singleArticle.title}}</h3>
+                        </div> <!-- articleHeading -->
+
+                        <div class = "articleDetails">
+                            <div class = "eta">
+                                {{singleArticle.time_read}} min read
+                            </div>
+
+                            <div class = "author">
+                                <h4>Nischal Shrestha</h4>
+                            </div>
+
+                            <div class = "timeSince">
+                                <h4>{{singleArticle.published_on|timesince}}</h4>
+                            </div>
+                        </div> <!-- articleDetails -->
+                    </a>
+                </div>
+            </div> <!-- row -->
+    {% endfor %}
+<br/ >
+{% endblock SearchResult %}
