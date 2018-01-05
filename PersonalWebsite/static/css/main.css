@@ -12,6 +12,12 @@ body {
     margin-bottom: 20px;
 }
 
+h4#searchResultCount{
+  font-size: 20px;
+  margin-top: 20px;
+  font-family: 'Barlow', sans-serif;
+}
+
 
 
 @media (min-width: 992px) { /* For Big Screen */

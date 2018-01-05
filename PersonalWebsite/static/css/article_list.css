@@ -68,7 +68,7 @@
 
 .articleDetails{
 
-    /* border: 2px solid green; */
+   
     margin: 0;
     padding: 0;
 
@@ -78,7 +78,7 @@
     margin: 0px;
     font-size: 15px;
     font-family: 'Barlow', sans-serif;
-    /* border: 2px solid grey; */
+    
     /* margin-bottom: 5px; */
     display: flex;
   
@@ -102,6 +102,6 @@ a.articleLink:hover{
 }
 
 .singleArticle{
-/*     border: 2px dotted red;
-    margin-bottom: 0px; */
+
+    
 }
