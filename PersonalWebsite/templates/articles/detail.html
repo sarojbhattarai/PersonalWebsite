@@ -5,12 +5,77 @@
 {% endblock Title %}
 
 {% block SingleArticle %}
-    <h2>{{article.title}}</h2>
-    <img src= {{article.featured_image.url}}>
-    <p>{{article.body}}</p>
-    <p>Tags:
-    {% for tag in article.tags.all  %}
-        {{tag.name}}
-    {% endfor %}
+<div class = "container">
+            <div class = "row">
+                <div class = "col-lg-8 col-sm-8 col-md-8">
 
+                    <div id = "blogpostFeaturedImage">
+                      <img src= {{article.featured_image.url}} class = "img-responsive" id = "blogpostFeaturedImageImage">
+                    </div>
+
+                    <div id = "authorDetail">
+                        <div class = "container">
+                            <div class = "row">
+                                <img src = "img/author1.jpg" style="height: 40px; width: 40px">
+                                <div id = "blogpostDetails">
+                                    <p class = "authorName"> By Nischal Shrestha</p>
+                                    <p class = "publishedDate">{{article.pubished_on}}</p>
+                                </div> <!-- blopostDetails -->
+                            </div> <!-- row -- >
+                        </div> <!-- container -->
+                    </div> <!-- authorDetail -->
+          
+                    <div id = "blogpostHeading">
+                      <h1>{{article.title}}</h1>
+                    </div>
+
+                    <div id = "blogpostBody">
+                        <p>{{article.body|linebreaks}}<p>
+                    </div> <!-- blogpostBody -->
+                </div> <!-- col -->
+            </div>
+
+
+
+
+                <!-- Right side -->
+            
+                <div class = "col-lg-4 col-sm-4 col-md-4">
+                    <div class = "container"> <!-- container for right -->
+                    {% for singleArticle in articles %}
+                        <div class = "row">
+                            <div class = "singleArticle" data-target = "blogpostBody">
+                                <a href= "{% url 'ArticleDetail' singleArticle.slug %}" class = "articleLink">
+                                    <div class = "articleImage">
+                                    <img src= {{singleArticle.featured_image.url}} class = "img-responsive">
+                                    </div> <!-- articleImage -->
+
+                                    <div class = "articleHeading">
+                                        <h3>{{singleArticle.title}}</h3>
+                                    </div> <!-- articleHeading -->
+
+                                    <div class = "articleDetails">
+                                        <div class = "eta">{{singleArticle.time_read}}</div>
+
+                                        <div class = "author">
+                                            <h4>Nischal Shrestha</h4>
+                                        </div>
+
+                                        <div class = "timeSince">
+                                            <h4>{{singleArticle.published_on|timesince}}</h4>
+                                        </div>
+                                    </div> <!-- articleDetails -->
+                                </a>
+                            </div> <!-- singleArticle -->
+                        </div> <!-- row -->
+                    {% endfor %}
+                    </div> <!-- container for right -->
+                </div> <!-- col -->
+        </div> <!-- row -->
+</div> <!-- container -->
+    <p>Tags:
+ <!--    {% for tag in article.tags.all  %}
+     {{tag.name}}
+ {% endfor %}
+  -->
 {% endblock SingleArticle %}
