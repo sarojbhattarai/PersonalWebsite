@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item"  id = "activeMenu" >
-                <a class="nav-link"href="#">Articles
+                <a class="nav-link"href="{% url 'ArticleList' %}">Articles
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -28,7 +28,7 @@
           </ul>
 
           <div class="col-sm-3 col-md-3" id = "searchArea">
-            <form class="navbar-form" role="search">
+            <form class="navbar-form" role="search" method = "GET" action = "">
               <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search" id = "search" name="q">
                   <!-- <div class="input-group-btn">
