@@ -32,9 +32,13 @@ def article_list(request):
 
 
 def article_detail(request, slug=None):
+    articles = Article.objects.all().order_by('-published_on')[:5]
     article = get_object_or_404(Article, slug=slug)
     template_name = 'articles/detail.html'
-    context = {'article': article}
+    context = {
+        'article': article,
+        'articles': articles
+    }
     return render(request, template_name, context)
 
 
