@@ -20,6 +20,7 @@ from .settings import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('articles/', include('articles.urls')),
+    path('contact/', include('contact_form.urls')),
 ]
 
 urlpatterns += static(MEDIA_URL,
