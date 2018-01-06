@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block Title %}
+    Contact
+{% endblock Title %}
+
+{% block ContactForm %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form method = 'POST'>
+                {{form.as_p}}{% csrf_token %}
+                <button type = 'submit'>Send</button>
+            </div>
+            
+        </div>
+    </div>
+    
+</form>
+{% endblock ContactForm %}
