@@ -46,6 +46,7 @@ MY_APPS = [
 
 THIRD_PARTY_APPS = [
     'taggit',
+    'crispy_forms',
 ]
 
 INSTALLED_APPS = MY_APPS + THIRD_PARTY_APPS + SYSTEM_APPS
@@ -139,3 +140,15 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
+
+# START email configuration #
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'shresthaNischallal@gmail.com' # put your gmail email
+EMAIL_HOST_PASSWORD = 'YourPassword' # put your gmail password
+EMAIL_PORT = 587
+
+# EMAIL_SUBJECT_PREFIX = '[Simple Project] ' # personalize this prefix
+
+SEND_BROKEN_LINK_EMAILS = False
+# END email configuration #
