@@ -152,3 +152,5 @@ EMAIL_PORT = 587
 
 SEND_BROKEN_LINK_EMAILS = False
 # END email configuration #
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
