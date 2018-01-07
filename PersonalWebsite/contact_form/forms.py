@@ -23,14 +23,14 @@ class ContactForm(forms.Form):
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Fieldset(
-                    "This is legend",
+                    "Keep in touch",
                     'name',
                     'email',
                     'subject',
                     'message'
                 ),
             ButtonHolder(
-                Submit('submit', 'Submit', css_id = 'ContactFormSubmit'))
+                Submit('submit', 'Send', css_class = 'btn btn-primary'))
 
             )
 
