@@ -7,21 +7,22 @@ from django.db.models import Q
 import random
 
 # Create your views here.
-
-def article_list(request):
+def search_articles(request):
     articles = Article.objects.all().order_by('-published_on')
-    featured_articles = articles.filter(is_featured=True)
-    front_featured_article = featured_articles[random.randint(0, len(featured_articles) - 1)]
-    # Search
     query = request.GET.get('q')
     if query:
+        print(query)
         queryset_list = articles.filter(
             Q(title__icontains=query)|
             Q(body__icontains=query)|
             Q(tags__name__in=[query])
             ).distinct()
-        print(queryset_list)
-        return render(request, 'articles/search_result.html', {"articles":queryset_list, 'query':query})
+    return render(request, 'articles/search_result.html', {"articles":queryset_list, 'query':query})
+
+def article_list(request):
+    articles = Article.objects.all().order_by('-published_on')
+    featured_articles = articles.filter(is_featured=True)
+    front_featured_article = featured_articles[random.randint(0, len(featured_articles) - 1)]
     template_name = 'articles/list.html'
     context = {
         "articles": articles,

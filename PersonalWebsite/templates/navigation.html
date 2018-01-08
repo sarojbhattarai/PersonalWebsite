@@ -28,12 +28,10 @@
           </ul>
 
           <div class="col-sm-3 col-md-3" id = "searchArea">
-            <form class="navbar-form" role="search" method = "GET" action = "">
+            <form class="navbar-form" role="search" method = "GET" action = "{% url 'SearchArticles' %}">
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search" id = "search" name="q">
-                  <!-- <div class="input-group-btn">
-                      <button class="btn" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                  </div> -->
+                  <input type="text" class="form-control" placeholder="Search Articles" id = "search" name="q">
+              
               </div> <!-- input-group -->
             </form>
         </div> <!-- searchArea -->
