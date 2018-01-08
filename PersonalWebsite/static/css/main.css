@@ -22,7 +22,7 @@ h4#searchResultCount{
 
 @media (min-width: 992px) { /* For Big Screen */
 
-#mainImageImage {
+.mainImageImage{
     height: 450px;
   }
 
