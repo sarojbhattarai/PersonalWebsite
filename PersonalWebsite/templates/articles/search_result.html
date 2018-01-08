@@ -2,7 +2,9 @@
 {% block Title %}
     Search
 {% endblock Title %}
-
+{% block NavigationMenu %}
+    {% include "includes/tabs.html" with active_tab='Articles' %}
+{% endblock NavigationMenu %}
 {% block SearchResult %}
     <div class = "container" id = "searchResult">
         <h4 id = "searchResultCount">{{articles.count}} result{{articles.count|pluralize}} found for "{{query}}"</h4>

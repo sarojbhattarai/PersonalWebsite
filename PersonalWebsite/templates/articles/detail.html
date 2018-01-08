@@ -3,7 +3,9 @@
 {% block Title %}
     {{article.title}}
 {% endblock Title %}
-
+{% block NavigationMenu %}
+    {% include "includes/tabs.html" with active_tab='Articles' %}
+{% endblock NavigationMenu %}
 {% block SingleArticle %}
 <div class = "container">
             <div class = "row">

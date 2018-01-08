@@ -2,20 +2,23 @@
 {% block Title %}
     Articles
 {% endblock Title %}
-
+{% block NavigationMenu %}
+    {% include "includes/tabs.html" with active_tab='Articles' %}
+{% endblock NavigationMenu %}
+{% include "includes/tabs.html" with active_tab='Articles' %}
 {% block FeaturedArticles %}
     <div class = "container" id = "mainImage">
         <div class="carousel slide" data-ride="carousel" data-interval = "2000">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">  
                     <a href= "{% url 'ArticleDetail' front_featured_article.slug %}">
-                      <img src= {{front_featured_article.featured_image.url}} alt={{front_featured_article.title}} class = "img-responsive" id = "mainImageImage">
+                      <img src= {{front_featured_article.featured_image.url}} alt={{front_featured_article.title}} class = "img-responsive mainImageImage">
                     </a>
                 </div>
                 {% for singleArticle in featured_articles  %}
                     <div class="carousel-item">
                         <a href= "{% url 'ArticleDetail' singleArticle.slug %}">
-                          <img src={{singleArticle.featured_image.url}} alt={{singleArticle.title}} class = "img-responsive" id = "mainImageImage">
+                          <img src={{singleArticle.featured_image.url}} alt={{singleArticle.title}} class = "img-responsive mainImageImage">
                         </a>
                     </div>
                 {% endfor featured_articles %}
