@@ -14,7 +14,8 @@ class ContactForm(forms.Form):
         label = 'Your Favourite Email')
     subject = forms.CharField()
     message = forms.CharField(
-        label = 'Your Message'
+        label = 'Your Message',
+        widget = forms.Textarea
         )
 
 
