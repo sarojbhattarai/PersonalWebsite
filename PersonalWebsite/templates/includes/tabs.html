@@ -1,0 +1,39 @@
+<!-- Navigation -->     
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-static-top" role="navigation" id="topnavbar">
+  <div class="container">
+                <!-- <a class="navbar-brand" href="#">Start Bootstrap</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item"  id = "{% if active_tab == 'Articles' %}activeMenu{% endif %}" >
+                <a class="nav-link" href="{% url 'ArticleList' %}">Articles
+                </a>
+              </li>
+              <li class="nav-item"  id = "{% if active_tab == 'MyWorks'%}activeMenu{% endif %}" >
+                <a class="nav-link" href="#">My Works</a>
+              </li>
+              <li class="nav-item"  id = "{% if active_tab == 'Life' %}activeMenu{% endif %}" >
+                <a class="nav-link" href="#">Life</a>
+              </li>
+              <li class="nav-item"  id = "{% if active_tab == 'Photos' %}activeMenu{% endif %}" >
+                <a class="nav-link" href="#">Photos</a>
+              </li>
+              <li class="nav-item" id = "{% if active_tab == 'Contact/Hire' %}activeMenu{% endif %}">
+                <a class="nav-link" href="{% url 'Contact' %}">Contact/Hire</a>
+              </li>
+          </ul>
+
+          <div class="col-sm-3 col-md-3" id = "searchArea">
+            <form class="navbar-form" role="search" method = "GET" action = "{% url 'SearchArticles' %}">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search Articles" id = "search" name="q">
+              
+              </div> <!-- input-group -->
+            </form>
+        </div> <!-- searchArea -->
+      </div> <!-- navbarResponsive -->
+  </div> <!-- container -->
+</nav>
