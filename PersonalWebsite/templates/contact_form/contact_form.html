@@ -3,7 +3,9 @@
 {% block Title %}
     Contact
 {% endblock Title %}
-
+{% block NavigationMenu %}
+    {% include "includes/tabs.html" with active_tab='Contact/Hire' %}
+{% endblock NavigationMenu %}
 {% block ContactForm %}
     <div class="container" id = "contactForm">
         <div class="row">
