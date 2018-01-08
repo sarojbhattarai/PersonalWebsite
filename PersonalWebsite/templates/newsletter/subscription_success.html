@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
 {% block Title %}
-    Mail Send
+    Subscribed Successfully
 {% endblock Title %}
-    {% include "includes/tabs.html" with active_tab='Contact/Hire' %}
+
 {% block NavigationMenu %}
-    
+    {% include "includes/tabs.html" with active_tab='' %}
 {% endblock NavigationMenu %}
 
-{% block MailReceived %}
-    <div class="container">
+{% block my_content %}
+        <div class="container">
         <div class="row">
             <div class="col-md-6 successText">
-                <p>Your message is send.</p>
+                <p>Subscribed Successfully</p>
             </div>
         </div>
     </div>
-{% endblock MailReceived %}
+{% endblock my_content %}

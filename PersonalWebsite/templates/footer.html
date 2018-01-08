@@ -50,12 +50,15 @@
             <div class = "col-lg-3 col-md-6" id = "newsletter-section">
                 <h4>Newsletter</h4>
                 <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins. Then What Alarms The Penguins. Subscribe Me To Find Out.</p>
-                <p>
+                <p> 
+                    <form method = "POST" action = "{% url 'AddToSubscribersList' %}">
+                    {% csrf_token %}
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="smart@outofworld.com">
+                      <input type="email" class="form-control" placeholder="smart@outofworld.com"  name = "SubscriberEmail">
                     </div><!-- /input-group -->
                     <br />
                     <button id = "NewsletterSubmit" class = "btn btn-primary">Submit</button>
+                    </form>
                  </p>
             </div>
         </footer>

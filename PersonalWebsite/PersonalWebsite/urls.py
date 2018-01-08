@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('articles/', include('articles.urls')),
     path('contact/', include('contact_form.urls')),
+    path('newsletter/', include('newsletter.urls')),
 ]
 
 urlpatterns += static(MEDIA_URL,

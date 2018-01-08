@@ -42,6 +42,7 @@ SYSTEM_APPS = [
 MY_APPS = [
     'articles',
     'contact_form',
+    'newsletter',
 ]
 
 THIRD_PARTY_APPS = [
