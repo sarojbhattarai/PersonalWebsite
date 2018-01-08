@@ -14,15 +14,19 @@
     <link href = "{% static 'css/featured_image_carousel.css' %}" rel = "stylesheet" type = "text/css">
    <link href = "{% static 'css/main.css' %}" rel = "stylesheet" type = "text/css">
    <link href = "{% static 'css/contact_form.css' %}" rel = "stylesheet" type = "text/css">
+   
 </head>
 <body>
     <div class="container" id="banner">
-                <a href = "{% url 'ArticleList' %}">
-                    <img src = "{% static 'img/brand.png' %}">
-                </a>
-        </div> <!-- banner -->
+        <a href = "{% url 'ArticleList' %}">
+            <img src = "{% static 'img/brand.png' %}">
+        </a>
+    </div> <!-- banner -->
 
- {% include "navigation.html" %}
+{% block NavigationMenu %}
+    
+{% endblock NavigationMenu %}
+
     {% block FeaturedArticles %} {% endblock FeaturedArticles %}
 <div class = "seperator"><hr></div>
     {% block ArticleList %}    {% endblock ArticleList %}
@@ -46,10 +50,15 @@
     {% block UpdateArticle %}
         
     {% endblock UpdateArticle %}
+
+    <div id = "Test">
+        <p>Inside Test id</p>
+    </div>
     
 
     
 
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
