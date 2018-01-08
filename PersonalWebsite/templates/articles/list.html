@@ -1,11 +1,15 @@
 {% extends "base.html" %}
+
 {% block Title %}
     Articles
 {% endblock Title %}
+
 {% block NavigationMenu %}
     {% include "includes/tabs.html" with active_tab='Articles' %}
 {% endblock NavigationMenu %}
+
 {% include "includes/tabs.html" with active_tab='Articles' %}
+
 {% block FeaturedArticles %}
     <div class = "container" id = "mainImage">
         <div class="carousel slide" data-ride="carousel" data-interval = "2000">
@@ -62,7 +66,7 @@
                     </div> <!-- singleArticle -->
                 </div> <!-- col -->
             {% endfor %}
-        </row>
+        </div>
     </div> <!-- container -->
 
     <a href= "{% url 'AddArticle' %}">Add Article</a>

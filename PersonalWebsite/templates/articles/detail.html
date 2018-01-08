@@ -35,7 +35,7 @@
                         <p>{{article.body|linebreaks}}<p>
                     </div> <!-- blogpostBody -->
                 </div> <!-- col -->
-            </div>
+            </div> <!-- row -->
 
 
 
@@ -73,11 +73,10 @@
                     {% endfor %}
                     </div> <!-- container for right -->
                 </div> <!-- col -->
-        </div> <!-- row -->
-</div> <!-- container -->
-    <p>Tags:
- <!--    {% for tag in article.tags.all  %}
-     {{tag.name}}
- {% endfor %}
-  -->
+            </div>
+    </div> <!-- container -->
+<!--     <p>Tags:
+ {% for tag in article.tags.all  %}
+ {{tag.name}}
+ {% endfor %} -->
 {% endblock SingleArticle %}

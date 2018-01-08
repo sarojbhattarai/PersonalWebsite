@@ -3,19 +3,20 @@
 {% block Title %}
     Contact
 {% endblock Title %}
+
 {% block NavigationMenu %}
     {% include "includes/tabs.html" with active_tab='Contact/Hire' %}
 {% endblock NavigationMenu %}
+
 {% block ContactForm %}
     <div class="container" id = "contactForm">
         <div class="row">
             <div class="col-md-6">
                 <form method = 'POST'>
                 {% crispy form %}{% csrf_token %}
+                </form>
             </div>
             
         </div>
     </div>
-    
-</form>
 {% endblock ContactForm %}
