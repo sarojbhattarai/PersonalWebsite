@@ -18,6 +18,9 @@ h4#searchResultCount{
   font-family: 'Barlow', sans-serif;
 }
 
+.successText{
+    margin-top: 20px;
+}
 
 
 @media (min-width: 992px) { /* For Big Screen */
