@@ -3,11 +3,11 @@
     background-color: #3c3d41;
     color: rgba(255, 255, 255, 1.00);
     margin: auto;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border: 2px solid red;
 
-}
 
-footer{
-    padding: 60px 40px;
 }
 
 ul.pages, .list, .social-links {
@@ -33,6 +33,6 @@ a{
 }
 
 #newsletter-section, #social-section, #footer-information, #footer-menu{
-    
+    border: 2px solid green;
    
 }
