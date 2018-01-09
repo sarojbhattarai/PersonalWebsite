@@ -5,6 +5,7 @@ from articles.forms import ArticleForm, CategoryForm
 from django.urls import reverse
 from django.db.models import Q
 import random
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def search_articles(request):
@@ -42,7 +43,7 @@ def article_detail(request, slug=None):
     }
     return render(request, template_name, context)
 
-
+@login_required
 def add_article(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST, request.FILES)
@@ -57,7 +58,7 @@ def add_article(request):
         'form':form,
     }
     return render(request, template_name, context)
-
+@login_required
 def update_article(request, slug=None):
     article = get_object_or_404(Article, slug=slug)
     if request.method == 'POST':
@@ -74,7 +75,7 @@ def update_article(request, slug=None):
     }
     return render(request, template_name, context)
 
-
+@login_required
 def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)

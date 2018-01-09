@@ -19,12 +19,13 @@
 <body>
 
     <div class = "container" id = "AdminSection">
-    {% if user.is_authenticated %}   
-        <a href= "{% url 'AddArticle' %}">Add Article</a>
-        <a href = "{% url 'AddCategory' %}">Add Category</a>
-    {% endif %}
+        {% if user.is_authenticated %}   
+            <a href= "{% url 'AddArticle' %}">Add Article</a>
+            <a href = "{% url 'AddCategory' %}">Add Category</a>
+        {% endif %}
         
     </div>
+    
     <div class="container" id="banner">
         <a href = "{% url 'ArticleList' %}">
             <img src = "{% static 'img/brand.png' %}">
