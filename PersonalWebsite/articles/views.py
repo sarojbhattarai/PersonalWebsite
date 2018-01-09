@@ -11,13 +11,13 @@ def search_articles(request):
     articles = Article.objects.all().order_by('-published_on')
     query = request.GET.get('q')
     if query:
-        print(query)
         queryset_list = articles.filter(
             Q(title__icontains=query)|
             Q(body__icontains=query)|
             Q(tags__name__in=[query])
             ).distinct()
-    return render(request, 'articles/search_result.html', {"articles":queryset_list, 'query':query})
+        return render(request, 'articles/search_result.html', {"articles":queryset_list, 'query':query})
+    return render(request, 'articles/search_result.html', {})
 
 def article_list(request):
     articles = Article.objects.all().order_by('-published_on')

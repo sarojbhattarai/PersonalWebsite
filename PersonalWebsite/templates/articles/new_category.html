@@ -1,12 +1,23 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% block Title %}
     Add Category
 {% endblock Title %}
 
-{% block NewCategory %}
-    <form method = 'POST' action = '.'>
-        {{form.as_p}}{% csrf_token %}
-        <button type = 'Submit'>Add</button>
-    </form>
-{% endblock NewCategory %}
+{% block NavigationMenu %}
+    {% include "includes/tabs.html" with active_tab='Articles' %}
+{% endblock NavigationMenu %}
+
+{% block my_content %}
+    <div class = "container" id = "modelForm">
+        <div class = "row">
+            <div class = "col-md-6">
+                <form method = 'POST' action = '.'>
+                    {% crispy form %}{% csrf_token %}
+                    <button type = 'Submit'>Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+{% endblock my_content %}

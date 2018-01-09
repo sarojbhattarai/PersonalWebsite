@@ -2,11 +2,14 @@
 {% block Title %}
     Search
 {% endblock Title %}
+
 {% block NavigationMenu %}
     {% include "includes/tabs.html" with active_tab='Articles' %}
 {% endblock NavigationMenu %}
+
 {% block SearchResult %}
     <div class = "container" id = "searchResult">
+    {% if query %}
         <h4 id = "searchResultCount">{{articles.count}} result{{articles.count|pluralize}} found for "{{query}}"</h4>
 <hr>
     {% for singleArticle in articles  %}
@@ -43,6 +46,11 @@
                 </div>
             </div> <!-- row -->
     {% endfor %}
+
+    {% else %}
+        <h4 id = 'searchResultCount'>Enter some text to search.</h4>
+
+    {% endif %}
 </div>
 <br/ >
 {% endblock SearchResult %}

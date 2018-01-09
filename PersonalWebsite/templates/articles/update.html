@@ -1,12 +1,23 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% block Title %}
     Update 
 {% endblock Title %}
 
+{% block NavigationMenu %}
+    {% include "includes/tabs.html" with active_tab='Articles' %}
+{% endblock NavigationMenu %}
+
 {% block UpdateArticle %}
-    <form method = "POST" action = '.' enctype="multipart/form-data">
-        {{form.as_p}}{% csrf_token %}
-        <button type = 'submit'>Update</button>
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form method = "POST" action = '.' enctype="multipart/form-data">
+                    {% crispy form%} {% csrf_token %}
+                    <button type = 'submit'>Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 {% endblock UpdateArticle %}
