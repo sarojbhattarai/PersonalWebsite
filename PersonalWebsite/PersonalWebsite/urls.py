@@ -22,6 +22,7 @@ urlpatterns = [
     path('articles/', include('articles.urls')),
     path('contact/', include('contact_form.urls')),
     path('newsletter/', include('newsletter.urls')),
+    path('mylife/', include('mylife.urls')),
 ]
 
 urlpatterns += static(MEDIA_URL,
