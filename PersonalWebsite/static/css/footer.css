@@ -5,8 +5,6 @@
     margin: auto;
     padding: 60px 40px;
 
-
-
 }
 
 ul.pages, .list, .social-links {
@@ -33,6 +31,16 @@ a{
 
 #newsletter-section, #social-section, #footer-information, #footer-menu{
     
-   
 }
 
+@media (max-width: 478px) {
+#newsletter-section, #social-section, #footer-information, #footer-menu{
+    margin-top: 20px;
+}
+
+#myFooter{
+    padding: 30px 20px;
+}
+
+
+}
