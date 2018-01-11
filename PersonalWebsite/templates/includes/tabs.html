@@ -19,7 +19,7 @@
                 <a class="nav-link" href="{% url 'EventList' %}">Life</a>
               </li>
               <li class="nav-item"  id = "{% if active_tab == 'Photos' %}activeMenu{% endif %}" >
-                <a class="nav-link" href="#">Photos</a>
+                <a class="nav-link" href="{% url 'PhotoList' %}">Photos</a>
               </li>
               <li class="nav-item" id = "{% if active_tab == 'Contact/Hire' %}activeMenu{% endif %}">
                 <a class="nav-link" href="{% url 'Contact' %}">Contact/Hire</a>
