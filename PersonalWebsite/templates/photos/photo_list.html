@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link href = "{% static 'css/component.css' %}" rel = "stylesheet" type = "text/css">
+    <link href = "{% static 'css/normalize.css' %}" rel = "stylesheet" type = "text/css">
+    <link href = "{% static 'css/demo.css' %}" rel = "stylesheet" type = "text/css">
+    <script src = "{% static 'js/modernizr.custom.js' %}"></script>
+{% endblock css %}
+
+{% block Title %}
+    My Photos
+{% endblock Title %}
+
+{% block NavigationMenu %}
+    {% include "includes/tabs.html" with active_tab='Photos' %}
+{% endblock NavigationMenu %}
+
+{% block my_content %}
+<div class="container" id = "photoSection">
+            <ul id="elasticstack" class="elasticstack">
+                {% for my_photo in photos  %}
+                    <li><h6>{{my_photo.alt}}</h6><img src="{{my_photo.photo.url}} "alt = "{{my_photo.alt}}" height="280px" width="300px"></li>
+                {% endfor %}
+            </ul>
+</div>
+
+{% endblock my_content %}
+
+{% block js %}
+    <script src="{% static 'js/draggabilly.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/elastiStack.js' %}"></script>
+    <script>
+    new ElastiStack( document.getElementById( 'elasticstack' ) );
+    </script>
+{% endblock js %}
