@@ -44,6 +44,7 @@ MY_APPS = [
     'contact_form',
     'newsletter',
     'mylife',
+    'photos',
 ]
 
 THIRD_PARTY_APPS = [
