@@ -8,7 +8,7 @@
             <div class = "col-lg-3 col-md-3" id = "footer-information">
                 <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
                 <p>Copyright text 2018 by Nischal!!</p>
-                <a href = "./index.html">
+                <a href = "{% url 'ArticleList' %}">
                     <img src = "{% static 'img/brand.png' %}" class = "img-responsive">
                 </a>
             </div>
@@ -55,7 +55,7 @@
                     <form method = "POST" action = "{% url 'AddToSubscribersList' %}">
                     {% csrf_token %}
                     <div class="input-group">
-                      <input type="email" class="form-control" placeholder="smart@outofworld.com"  name = "SubscriberEmail">
+                      <input type="email" class="form-control" placeholder="Enter Your Favourite e-mail"  name = "SubscriberEmail">
                     </div><!-- /input-group -->
                     <br />
                     <button id = "NewsletterSubmit" class = "btn btn-primary">Submit</button>
