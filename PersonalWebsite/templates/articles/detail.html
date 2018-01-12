@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block Title %}
     {{article.title}}
 {% endblock Title %}
@@ -14,14 +14,15 @@
                     <div id = "blogpostFeaturedImage">
                       <img src= {{article.featured_image.url}} class = "img-responsive" id = "blogpostFeaturedImageImage">
                     </div>
+                    <div class = "mBuffer"></div>
 
                     <div id = "authorDetail">
                         <div class = "container">
                             <div class = "row">
-                                <img src = "img/author1.jpg" style="height: 40px; width: 40px">
+                                <img src = "{% static 'img/nischal.jpg' %}" style="height: 40px; width: 40px">
                                 <div id = "blogpostDetails">
                                     <p class = "authorName"> By Nischal Shrestha</p>
-                                    <p class = "publishedDate">{{article.pubished_on}}</p>
+                                    <p class = "publishedDate">{{article.published_on}}</p>
                                 </div> <!-- blopostDetails -->
                             </div> <!-- row -- >
                         </div> <!-- container -->
@@ -57,14 +58,14 @@
                                     </div> <!-- articleHeading -->
 
                                     <div class = "articleDetails">
-                                        <div class = "eta">{{singleArticle.time_read}}</div>
+                                        <div class = "eta">{{singleArticle.time_read}} min read</div>
 
                                         <div class = "author">
                                             <h4>Nischal Shrestha</h4>
                                         </div>
 
                                         <div class = "timeSince">
-                                            <h4>{{singleArticle.published_on|timesince}}</h4>
+                                            <h4>{{singleArticle.published_on|timesince}} ago</h4>
                                         </div>
                                     </div> <!-- articleDetails -->
                                 </a>
