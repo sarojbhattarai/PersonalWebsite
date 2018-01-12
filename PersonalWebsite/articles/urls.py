@@ -6,7 +6,7 @@ urlpatterns = [
     path('add_article/', add_article, name = 'AddArticle' ),
     path('update_article/<slug:slug>/', update_article, name='UpdateArticle' ),
     path('add_category/', add_category, name = 'AddCategory'),
-    path('list/', article_list, name = 'ArticleList'),
+    path('', article_list, name = 'ArticleList'),
     path('detail/<slug:slug>/', article_detail, name = 'ArticleDetail'),
     path('search_articles/', search_articles, name = 'SearchArticles'),
 ]
