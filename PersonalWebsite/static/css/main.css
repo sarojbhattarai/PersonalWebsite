@@ -3,8 +3,10 @@ body {
  font-family: 'Barlow', sans-serif;
 /*  background-color: ghostwhite; */
 
+}
 
-
+.mBuffer{
+  margin-top: 20px;
 }
 
 #banner.container{
