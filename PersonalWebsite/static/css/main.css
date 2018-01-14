@@ -36,10 +36,6 @@ h4#searchResultCount{
     height: 450px;
   }
 
-.seperator{
-    display: none;
-}
-
 #activeMenu{
     box-shadow: 0 -4px #ffb900;
     background-color: white;
