@@ -24,7 +24,7 @@ class ContactForm(forms.Form):
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Fieldset(
-                    "Keep in touch",
+                    "Use Your Favourite Mailing Address and Drop Me a Message.",
                     'name',
                     'email',
                     'subject',
