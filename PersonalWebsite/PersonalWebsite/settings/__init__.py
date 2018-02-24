@@ -1,6 +1,6 @@
 # For Development Purpose
 
-from .development import *
+# from .development import *
 
 # For Production Purpose
-# from .production import *
+from .production import *
