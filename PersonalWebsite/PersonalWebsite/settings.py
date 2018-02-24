@@ -27,7 +27,7 @@ SECRET_KEY = 'ypxjhbpl6zs$x18!3i81iq2h__9b+%4*n+a&4bukknic0eu^qn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nischallal.pythonanywhere.com']
+ALLOWED_HOSTS = ['nischallal.pythonanywhere.com','*',]
 
 
 # Application definition
