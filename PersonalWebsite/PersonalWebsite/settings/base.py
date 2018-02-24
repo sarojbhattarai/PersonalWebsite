@@ -8,7 +8,27 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
+
+
 """
+import requests
+my_domain = 'NischalLal.pythonanywhere.com'
+username = 'NischalLal'
+token = '26cca5322dbd0ceb29753721b148e18fbc92a276'
+
+response = requests.post(
+    'https://www.pythonanywhere.com/api/v0/user/{username}/webapps/{domain}/reload/'.format(
+        username=username, domain=my_domain
+    ),
+    headers={'Authorization': 'Token {token}'.format(token=token)}
+)
+if response.status_code == 200:
+    print('All OK')
+else:
+    print('Got unexpected status code {}: {!r}'.format(response.status_code, response.content))
+
+
+
 
 import os
 
