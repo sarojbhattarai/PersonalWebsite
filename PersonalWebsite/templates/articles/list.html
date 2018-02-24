@@ -11,6 +11,8 @@
 {% include "includes/tabs.html" with active_tab='Articles' %}
 
 {% block FeaturedArticles %}
+{% if front_featured_article %}
+    
     <div class = "container" id = "mainImage">
         <div class="carousel slide" data-ride="carousel" data-interval = "2000">
             <div class="carousel-inner" role="listbox">
@@ -30,6 +32,7 @@
 
         </div> <!-- carousel slide -->
     </div>
+{% endif %}
 
 {% endblock FeaturedArticles %}
 
