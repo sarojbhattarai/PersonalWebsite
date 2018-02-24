@@ -12,7 +12,7 @@ def contact(request):
             message = request.POST.get('message')
 
             email = EmailMessage(
-                    '{} send you a message.'.format(sender_email),
+                    'Message From Website.',
                     message, sender_email, ['shresthaNischalLal@gmail.com', 'aakrist666@gmail.com', 'hi@nischal.info.np'],
                     headers  = {'Reply-To': sender_email}
                 )
