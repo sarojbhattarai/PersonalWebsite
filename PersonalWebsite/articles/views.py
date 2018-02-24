@@ -7,6 +7,7 @@ from django.db.models import Q
 import random
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 def search_articles(request):
     articles = Article.objects.all().order_by('-published_on')
@@ -92,3 +93,14 @@ def add_category(request):
     }
     return render(request, template_name, context)
 
+
+
+
+
+def handler404(request):
+        data = {}
+        return render(request,'404.html', data)
+ 
+def handler500(request):
+        data = {}
+        return render(request,'500.html', data)
