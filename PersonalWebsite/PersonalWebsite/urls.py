@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from .settings import *
+from django.views.generic import TemplateView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('articles.urls')),
@@ -24,6 +26,9 @@ urlpatterns = [
     path('newsletter/', include('newsletter.urls')),
     path('mylife/', include('mylife.urls')),
     path('photos/', include('photos.urls')),
+    path('works/', include('works.urls')),
+    path('terms-and-conditions/', TemplateView.as_view(template_name="terms.html"), name = 'Terms'),
+    path('privacy/', TemplateView.as_view(template_name="privacy.html"), name='Privacy'),
 ]
 
 urlpatterns += static(MEDIA_URL,

@@ -8,7 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,400i" rel="stylesheet">
 
-    {% block css %} {% endblock css %}
+    
 
     <link href = "{% static 'css/navigation.css' %}" rel = "stylesheet" type = "text/css">
     <link href = "{% static 'css/article_list.css' %}" rel = "stylesheet" type = "text/css">
@@ -16,6 +16,8 @@
     <link href = "{% static 'css/featured_image_carousel.css' %}" rel = "stylesheet" type = "text/css">
    <link href = "{% static 'css/main.css' %}" rel = "stylesheet" type = "text/css">
    <link href = "{% static 'css/contact_form.css' %}" rel = "stylesheet" type = "text/css">
+
+   {% block css %} {% endblock css %}
    
 </head>
 <body>

@@ -45,6 +45,7 @@ MY_APPS = [
     'newsletter',
     'mylife',
     'photos',
+    'works',
 ]
 
 THIRD_PARTY_APPS = [
